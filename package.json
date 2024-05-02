@@ -1,12 +1,13 @@
 {
-  "name": "open-pro-next",
-  "version": "0.1.0",
+  "name": "blrgrooveco",
+  "version": "1.0.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "next build && firebase deploy --only hosting"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.17",
