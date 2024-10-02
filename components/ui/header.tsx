@@ -33,6 +33,14 @@ export default function Header() {
                 </a>
               </li>
               <li>
+                <a 
+                  href="https://medium.com/@blrgrooveco" 
+                  target='_blank' 
+                  className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out">
+                  Blog
+                </a>
+              </li>
+              <li>
                 <a href="https://www.instagram.com/blrgrooveco/" target='_blank' className="btn-sm text-white bg-purple-600 hover:bg-purple-700 ml-3">
                   Instagram
                 </a>
