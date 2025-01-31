@@ -5,6 +5,8 @@ import Image from 'next/image'
 import GoogleReviewButton from '../GoogleReviewButton/GoogleReviewButton'
 import WhatsAppButton from '../WhatsAppButton/WhatsAppButton'
 
+const appPackage = require('../../package.json')
+
 export default function Footer() {
   return (
     <footer>
@@ -115,7 +117,7 @@ export default function Footer() {
               </li>
             </ul>
             {/* Copyrights note */}
-            <div className="text-gray-400 text-sm mr-4" title='Owned by Cardiffinc Analytica Private Limited'>&copy; BlrGroove.co. All rights reserved. A Cardiff Company</div>
+            <div className="text-gray-400 text-sm mr-4" title={`Owned by Cardiffinc Analytica Private Limited ${appPackage?.version}`}>&copy; BlrGrooveCo. All rights reserved. A Cardiff Company.</div>
 
           </div>
 

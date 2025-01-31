@@ -11,6 +11,8 @@ const BookForm = ({id} : BookFormProps) => {
       method="POST"
       className="p-6 bg-gray-800 rounded-md sm:mx-48 mx-8"
       id={id}
+      data-aos="fade-up" 
+      data-aos-delay="700"
     >
       <h2 className="text-2xl text-white mb-4">Bring the Groove to Your Event</h2>
       
