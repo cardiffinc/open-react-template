@@ -1,7 +1,16 @@
-import VideoThumb from '@/public/images/hero-image-01.jpg'
-import ModalVideo from '@/components/modal-video'
+interface HeroTemplateProps {
+  h1: any, 
+  subtitle: any,
+  paragraph: any, 
+  b1Label: any, 
+  b1Url: any, 
+  b2Label: any, 
+  b2Url: any,
+  psText: any, 
+}
 
-export default function Hero() {
+
+export default function HeroTemplate({h1, subtitle, paragraph, b1Label, b2Label, b1Url, b2Url, psText} : HeroTemplateProps) {
   return (
     <section>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 relative">
@@ -24,30 +33,24 @@ export default function Hero() {
 
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-            <h1 className="h1 mb-4" data-aos="fade-up">BlrGrooveCo</h1>
-            <p className="text-xl text-gray-400 mb-8" data-aos="fade-up" data-aos-delay="200">Hire Live Bands & Artists | Curate Unforgettable Events</p>
-            <p className="text-xl text-gray-400 mb-8" data-aos="fade-up" data-aos-delay="200">Looking for top live bands and artists for your event? We connect you with the best musicians in Bengaluru for corporate events, weddings, private parties, and more.</p>
+            {h1 && <h1 className="h1 mb-4" data-aos="fade-up">{h1}</h1>}
+            {subtitle && <p className="text-xl text-gray-400 mb-8" data-aos="fade-up" data-aos-delay="200">{subtitle}</p>}
+            {paragraph && <p className="text-xl text-gray-400 mb-8" data-aos="fade-up" data-aos-delay="200">{paragraph}</p>}
             <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center">
-              <div data-aos="fade-up" data-aos-delay="400">
-                <a className="btn text-white bg-purple-600 hover:bg-purple-700 w-full mb-4 sm:w-auto sm:mb-0" target='_blank' href="https://docs.google.com/forms/d/e/1FAIpQLSeVo6I3_pw-lyaEuBQD2OjS3HYxOCXYUv4hXFN3kAATu0LKRw/viewform">Artist? Join Us</a>
-              </div>
-              <div data-aos="fade-up" data-aos-delay="600">
-                <a className="btn text-white bg-gray-700 hover:bg-gray-800 w-full sm:w-auto sm:ml-4" target='' href="/book-a-band">Book a Band/Artist</a>
-              </div>
+              {b1Label && <div data-aos="fade-up" data-aos-delay="400">
+                <a className="btn text-white bg-purple-600 hover:bg-purple-700 w-full mb-4 sm:w-auto sm:mb-0" 
+                    target={b1Url?.includes('https') ? '_blank' : ''} 
+                    href={b1Url}>{b1Label}</a>
+              </div>}
+              {b2Label && <div data-aos="fade-up" data-aos-delay="600">
+                <a className="btn text-white bg-gray-700 hover:bg-gray-800 w-full sm:w-auto sm:ml-4" 
+                    target={b1Url?.includes('https') ? '_blank' : ''} 
+                    href={b2Url}>{b2Label}</a>
+              </div>}
             </div>
+            {psText && <div data-aos="fade-up" data-aos-delay="400">{psText}</div>}
           </div>
-
-          {/* <ModalVideo
-            thumb={VideoThumb}
-            thumbWidth={1024}
-            thumbHeight={576}
-            thumbAlt="Modal video thumbnail"
-            video="/videos/video.mp4"
-            videoWidth={1920}
-            videoHeight={1080} /> */}
-
         </div>
-
       </div>
     </section>
   )

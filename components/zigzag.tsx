@@ -8,7 +8,7 @@ import SlowDating from '@/public/images/slow_dating.png'
 
 export default function Zigzag() {
   return (
-    <section>
+    <section data-aos="fade-up" data-aos-delay="600">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="py-12 md:py-20 border-t border-gray-800">
 

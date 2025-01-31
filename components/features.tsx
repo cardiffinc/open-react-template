@@ -1,13 +1,25 @@
-export default function Features() {
+interface featureProps {
+  isHome: boolean
+}
+
+export default function Features({isHome} : featureProps) {
   return (
     <section>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6" data-aos="fade-up" data-aos-delay="300">
         <div className="py-12 md:py-20">
 
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
-            <h2 className="h2 mb-4">At BlrGrooveCo, we're not just event curators, we're vibe architects.</h2>
-            <p className="text-xl text-gray-400">With a passion for music, community events, sports, movies, and a dedication to creating unforgettable moments, we specialize in crafting events that resonate with everyone.</p>
+            <h3 className="h3 mb-4">At BlrGrooveCo, we're not just event curators, we're vibe architects.</h3>
+            <h5 className="h5 mb-4">Create Unforgettable Events with Live Music and Artists from BlrGrooveCo</h5>
+            <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center">
+              <div data-aos="fade-up" data-aos-delay="400">
+                <a className="btn text-white bg-gray-700 hover:bg-gray-800 w-full mb-4 sm:w-auto sm:mb-0" target='' href="/about">About Us</a>
+              </div>
+              <div data-aos="fade-up" data-aos-delay="400">
+                <a className="btn text-white bg-green-600 hover:bg-green-700 w-full sm:w-auto sm:ml-4" target='_blank' href={`https://wa.me/+919980480343?text=${encodeURIComponent("Hello, I would like to talk to you regarding an event!")}`}>WhatsApp Us</a>
+              </div>
+            </div>
           </div>
 
          </div>

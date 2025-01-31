@@ -2,6 +2,8 @@ import React from 'react'
 import Link from 'next/link'
 import Logo from '@/public/images/blrgrooveco-logo-transparent-white.png'
 import Image from 'next/image'
+import GoogleReviewButton from '../GoogleReviewButton/GoogleReviewButton'
+import WhatsAppButton from '../WhatsAppButton/WhatsAppButton'
 
 export default function Footer() {
   return (
@@ -17,14 +19,14 @@ export default function Footer() {
               <div className="mb-2">
                 {/* Logo */}
                 <Link href="/" className="inline-block" aria-label="BlrGrooveCo">
-                   <Image className="max-w-full mx-auto md:max-w-none h-auto" src={Logo} width={64} height={64} alt="logo" unoptimized/>
+                  <Image className="max-w-full mx-auto md:max-w-none h-auto" src={Logo} width={64} height={64} alt="logo" unoptimized />
                 </Link>
               </div>
-              <div className="text-gray-400">Are you looking to organize an event, please connect with us to make the best out of it!</div>
+              <div className="text-gray-400">Are you looking to organize an event? <br />Connect with us to make the best out of it!</div>
             </div>
 
             {/* 2nd, 3rd and 4th blocks */}
-            <div className="md:col-span-8 lg:col-span-7 grid sm:grid-cols-3 gap-8" style={{display: 'none'}}>
+            <div className="md:col-span-8 lg:col-span-7 grid sm:grid-cols-3 gap-8" style={{ display: 'none' }}>
 
               {/* 2nd block */}
               <div className="text-sm">
@@ -95,6 +97,13 @@ export default function Footer() {
 
             {/* Social links */}
             <ul className="flex mb-4 md:order-1 md:ml-4 md:mb-0">
+              
+              <li className="ml-4">
+                <GoogleReviewButton />
+              </li>
+              <li className="ml-4">
+                <WhatsAppButton phone={"+919380569770"} message={"Hi, I'm interested in booking a band for my event!"} />
+              </li>
               <li className="ml-4">
                 <Link href="https://www.instagram.com/blrgrooveco/" className="flex justify-center items-center text-purple-600 bg-gray-800 hover:text-gray-100 hover:bg-purple-600 rounded-full transition duration-150 ease-in-out" aria-label="Instagram">
                   <svg className="w-8 h-8 fill-current" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
@@ -105,7 +114,6 @@ export default function Footer() {
                 </Link>
               </li>
             </ul>
-
             {/* Copyrights note */}
             <div className="text-gray-400 text-sm mr-4" title='Owned by Cardiffinc Analytica Private Limited'>&copy; BlrGroove.co. All rights reserved. A Cardiff Company</div>
 
