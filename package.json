@@ -1,13 +1,14 @@
 {
   "name": "blrgrooveco",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "node generate-sitemap.js",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "next build && firebase deploy --only hosting"
+    "deploy": "next build && node generate-sitemap.js && firebase deploy --only hosting"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.17",
