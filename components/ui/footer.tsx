@@ -9,7 +9,7 @@ const appPackage = require('../../package.json')
 
 export default function Footer() {
   return (
-    <footer>
+    <footer data-aos="fade-up" data-aos-delay="400">
       <div className="py-12 md:py-16">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
 

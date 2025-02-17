@@ -1,13 +1,15 @@
 const fs = require('fs');
 const path = require('path');
 
-const baseUrl = 'https://blrgroove.co'; // Your site URL
+const baseUrl = 'https://blrgroove.co'; 
 const pages = [
   '/', 
   '/about', 
-  '/hire-a-band', 
-  '/hire-an-artist',
-  '/contact-us'
+  '/book-a-band', 
+  '/book-an-artist',
+  '/contact-us',
+  '/blogs',
+  '/signin'
 ];
 
 const sitemapEntries = pages

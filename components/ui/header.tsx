@@ -34,8 +34,8 @@ export default function Header() {
               </li>
               <li>
                 <a 
-                  href="https://medium.com/@blrgrooveco" 
-                  target='_blank' 
+                  href="/blogs" 
+                  target='' 
                   className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out">
                   Blog
                 </a>
