@@ -248,13 +248,10 @@ const BlogEditor: React.FC = () => {
             init={{
               height: 400,
               menubar: true,
-              plugins: [
-                "advlist autolink lists link image charmap print preview anchor",
-                "searchreplace visualblocks code fullscreen",
-                "insertdatetime media table paste code help wordcount",
-              ],
-              toolbar:
-                "undo redo | bold italic underline strikethrough | link image | alignleft aligncenter alignright | bullist numlist outdent indent | code",
+              link_context_toolbar: true, 
+              plugins: "advlist autolink lists link image charmap print preview anchor, searchreplace visualblocks code fullscreen, insertdatetime media table paste code help wordcount",
+              //quickbars_insert_toolbar: 'quickimage quicktable | hr pagebreak',
+              toolbar: "undo redo | bold italic underline | link | alignleft aligncenter alignright | bullist numlist outdent indent ",
               image_caption: true,
               automatic_uploads: true,
               file_picker_types: "image",

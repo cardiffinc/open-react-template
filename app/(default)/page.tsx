@@ -5,17 +5,12 @@ export const metadata = {
 
 import Features from '@/components/features'
 import Hero from '@/components/hero'
-import WhatsAppButton from '@/components/WhatsAppButton/WhatsAppButton'
 
 export default function Home() {
   return (
     <>
       <Hero />
       <Features isHome={true}/>
-      {/* <WhatsAppButton 
-        phone={"+919380569770"} 
-        message={"Hi, I'm interested in booking a band for my event!"} 
-        floating={true}/> */}
     </>
   )
 }

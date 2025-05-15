@@ -2,14 +2,27 @@ const fs = require('fs');
 const path = require('path');
 
 const baseUrl = 'https://blrgroove.co'; 
+const blogsDir = path.join(__dirname, 'out', 'blogs');
+
+// Get all blog slugs dynamically
+let blogRoutes = [];
+if (fs.existsSync(blogsDir)) {
+  blogRoutes = fs
+    .readdirSync(blogsDir, { withFileTypes: true })
+    .filter(dirent => dirent.name.includes('html') || dirent.isDirectory()) // Ensure it's a directory
+    .map(dirent => `/blogs/${dirent.name}`);
+}
+console.warn({blogRoutes: blogRoutes?.length})
+// Define static pages
 const pages = [
-  '/', 
-  '/about', 
-  '/book-a-band', 
+  '/',
+  '/about',
+  '/book-a-band',
   '/book-an-artist',
   '/contact-us',
   '/blogs',
-  '/signin'
+  '/signin',
+  ...blogRoutes, // Add blog routes dynamically
 ];
 
 const sitemapEntries = pages
