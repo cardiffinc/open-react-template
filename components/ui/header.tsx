@@ -34,12 +34,28 @@ export default function Header() {
               </li>
               <li>
                 <a 
+                  href="/corporate" 
+                  target='' 
+                  className="btn-sm text-white bg-purple-600 hover:bg-purple-700 ml-3">
+                  Corporate Events
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="/colleges" 
+                  target='' 
+                  className="btn-sm text-white bg-purple-600 hover:bg-purple-700 ml-3">
+                  College Events
+                </a>
+              </li>
+              {/* <li>
+                <a 
                   href="/blogs" 
                   target='' 
                   className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out">
                   Blog
                 </a>
-              </li>
+              </li> */}
               <li>
                 <a href="/book-a-band" target='' className="btn-sm text-white bg-purple-600 hover:bg-purple-700 ml-3">
                   Book A Band

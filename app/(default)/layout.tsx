@@ -16,8 +16,8 @@ export default function DefaultLayout({
 
   useEffect(() => {
     AOS.init({
-      once: true,
-      disable: 'phone',
+      once: false,
+      // disable: 'phone',
       duration: 600,
       easing: 'ease-out-sine',
     })

@@ -42,6 +42,12 @@ export default function Testimonials() {
                   <li className="mb-1">
                     Starbucks India
                   </li>
+                  <li className="mb-1">
+                    Lulu Malls
+                  </li>
+                  <li className="mb-1">
+                    Social
+                  </li>
                 </ul>
               </div>
 
