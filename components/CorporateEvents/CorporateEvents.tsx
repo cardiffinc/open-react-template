@@ -1,9 +1,26 @@
 "use client"
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import WhyChooseUs from '../WhyChooseUs/WhyChooseUs';
 
 
 const CorporateEvents = () => {
+  const [videoSrc, setVideoSrc] = useState('');
+  useEffect(() => {
+    const handleResize = () => {
+      const isMobile = window.innerWidth <= 768;
+      const desktopVideoId = '1zdhfLIj-M2Bwo7V4o5UI2KoO7zIXLxiY';
+      const mobileVideoId = '1iLcxDVj8Tfr6tHQmQVvryoLi5pDVKY8B';
+      const selectedId = isMobile ? mobileVideoId : desktopVideoId;
+
+      setVideoSrc(`https://drive.google.com/file/d/${selectedId}/preview`);
+    };
+
+    handleResize(); // Set initially
+    window.addEventListener('resize', handleResize); // Optional: Update on resize
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <section className="bg-gray-900 text-white">
       {/* Hero Section */}
@@ -19,9 +36,21 @@ const CorporateEvents = () => {
           BlrGrooveCo crafts moments your people will remember.
         </p>
 
-        {/* Video Placeholder */}
+        {/* Video Placeholder
         <div className="bg-gray-700 mt-10 max-w-4xl mx-auto aspect-video bg-gray-700 rounded-lg flex items-center justify-center">
           <span className="text-white text-lg">[ Video_Goes_Here ]</span>
+        </div> */}
+        <div className="bg-gray-700 mt-10 max-w-4xl mx-auto aspect-[9/16] md:aspect-video rounded-lg flex items-center justify-center overflow-hidden">
+          {videoSrc ? (
+            <iframe
+              src={videoSrc}
+              allow="autoplay"
+              className="w-full h-full rounded-lg"
+              title="Corporate Event Video"
+            />
+          ) : (
+            <span className="text-white text-lg">Loading video...</span>
+          )}
         </div>
       </div>
 
@@ -31,13 +60,8 @@ const CorporateEvents = () => {
           What began as a love for live music grew into BlrGrooveCo, a team curating performances at festivals, restaurants, and malls.
         </p>
         <p className="text-lg">
-          We’ve loved creating spaces where music brings people together. Now, we’re bringing
-          that same energy into offices and corporate spaces — helping teams celebrate milestones,
-          strengthen bonds, and experience the joy of live music in ways that feel personal and meaningful.
-        </p>
-        <p className="text-lg">
-          Whether you're planning an employee offsite, a product launch, or a high-profile networking evening,
-          we’ve got the talent and event mastery to make it extraordinary.
+          Now we bring that same energy to offices and corporate spaces, helping teams celebrate, connect, and create memories.
+          From offsites to product launches and networking evenings, we deliver talent and event expertise to make it unforgettable.
         </p>
       </div>
 
@@ -128,13 +152,13 @@ const CorporateEvents = () => {
 
       <WhyChooseUs />
 
-      {/* Portfolio Carousel Placeholder */}
+      {/* Portfolio Carousel Placeholder
       <div className="bg-gray-800 py-16 px-6 text-center" data-aos="fade-up">
         <h2 className="text-3xl font-bold mb-4">See the Energy We Bring</h2>
         <div className="w-full h-64 bg-gray-400 rounded-lg flex items-center justify-center">
           <span className="text-white">Portfolio Gallery Coming soon!</span>
         </div>
-      </div>
+      </div> */}
 
       {/* CTA */}
       <div className="text-center py-16 px-6 bg-purple-700 text-white" data-aos="fade-up">
