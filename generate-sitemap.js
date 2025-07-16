@@ -50,7 +50,6 @@ console.log('Sitemap generated successfully at ' + sitemapPath);
 const robots = `User-agent: *
 Disallow: /admin
 Disallow: /login
-Disallow: /reset-password
 Disallow: /signin
 Disallow: /signup
 

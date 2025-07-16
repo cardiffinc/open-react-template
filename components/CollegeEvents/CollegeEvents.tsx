@@ -1,43 +1,72 @@
 "use client"
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const CollegeEvents = () => {
-    return (
-        <div className="bg-black text-white px-6 py-24">
-            {/* Header */}
-            <div className="text-center mb-16" data-aos="fade-up">
-                <h1 className="text-4xl md:text-6xl font-bold mb-4">Take Your College Fest to the Next Level</h1>
-                <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                    From headlining concerts to open mics, BlrGrooveCo powers unforgettable college events across the city.
-                </p>
-                <div className="bg-gray-700 mt-10 max-w-4xl mx-auto aspect-video bg-gray-700 rounded-lg flex items-center justify-center">
-          <span className="text-white text-lg">[ Video_Goes_Here ]</span>
+  const [videoSrc, setVideoSrc] = useState('');
+  useEffect(() => {
+    const handleResize = () => {
+      const isMobile = window.innerWidth <= 768;
+      const desktopVideoId = '1zdhfLIj-M2Bwo7V4o5UI2KoO7zIXLxiY';
+      const mobileVideoId = '1iLcxDVj8Tfr6tHQmQVvryoLi5pDVKY8B';
+      const selectedId = isMobile ? mobileVideoId : desktopVideoId;
+
+      setVideoSrc(`https://drive.google.com/file/d/${selectedId}/preview`);
+    };
+
+    handleResize(); // Set initially
+    window.addEventListener('resize', handleResize); // Optional: Update on resize
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  return (
+    <div className="bg-black text-white px-6 py-24">
+      {/* Header */}
+      <div className="text-center" data-aos="fade-up">
+        <h1 className="text-4xl md:text-6xl font-bold mb-4">Take Your College Fest to the Next Level</h1>
+        <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          From headlining concerts to open mics, BlrGrooveCo powers unforgettable college events across the city.
+        </p>
+      </div>
+      <div className='py-16 px-6 max-w-5xl mx-auto text-center'>
+        <div
+          className="bg-gray-700 max-w-4xl mx-auto aspect-[9/16] md:aspect-video rounded-lg flex items-center justify-center overflow-hidden"
+          data-aos="zoom-in-up" data-aos-delay="500">
+          {videoSrc ? (
+            <iframe
+              src={videoSrc}
+              allow="autoplay"
+              className="w-full h-full rounded-lg"
+              title="Corporate Event Video"
+            />
+          ) : (
+            <span className="text-white text-lg">Loading video...</span>
+          )}
         </div>
-            </div>
+      </div>
+      {/* Stats */}
+      <div className="bg-gray-700 py-12" data-aos="fade-up">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center" data-aos="fade-up">
+          <div>
+            <p className="text-4xl font-bold text-purple-600" data-aos="fade-up">300+</p>
+            <p className="text-gray-400 mt-2">Events Curated</p>
+          </div>
+          <div>
+            <p className="text-4xl font-bold text-purple-600" data-aos="fade-up">150+ Artists</p>
+            <p className="text-gray-400 mt-2">Across Bands, DJs & MCs</p>
+          </div>
+          <div>
+            <p className="text-4xl font-bold text-purple-600" data-aos="fade-up">50+ Brands</p>
+            <p className="text-gray-400 mt-2">Worked With</p>
+          </div>
+        </div>
+      </div>
 
-            {/* Stats */}
-            <div className="bg-gray-700 py-12" data-aos="fade-up">
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center" data-aos="fade-up">
-                <div>
-                    <p className="text-4xl font-bold text-purple-600" data-aos="fade-up">300+</p>
-                    <p className="text-gray-400 mt-2">Events Curated</p>
-                </div>
-                <div>
-                    <p className="text-4xl font-bold text-purple-600" data-aos="fade-up">150+ Artists</p>
-                    <p className="text-gray-400 mt-2">Across Bands, DJs & MCs</p>
-                </div>
-                <div>
-                    <p className="text-4xl font-bold text-purple-600" data-aos="fade-up">50+ Brands</p>
-                    <p className="text-gray-400 mt-2">Worked With</p>
-                </div>
-            </div>
-            </div>
+      {/* Services */}
+      <div className="py-16 px-6 max-w-5xl mx-auto text-center" data-aos="fade-up">
+        <h2 className="text-3xl font-bold mb-4">Our Services</h2>
+        <div className="grid md:grid-cols-2 gap-12 mx-4 md:mx-8 lg:mx-12 my-12">
 
-            {/* Services */}
-            <div className="py-16 px-6 max-w-5xl mx-auto text-center" data-aos="fade-up">
-            <h2 className="text-3xl font-bold mb-4">Our Services</h2>
-            <div className="grid md:grid-cols-2 gap-12 mx-4 md:mx-8 lg:mx-12 my-12">
-                
           {/* Flagship Fest */}
           <div className="border border-white/10 rounded-xl p-6 hover:shadow-xl transition bg-white/5" data-aos="fade-up">
             <h3 className="text-2xl font-semibold mb-2 text-purple-600">Flagship Fest Performances</h3>
@@ -92,24 +121,24 @@ const CollegeEvents = () => {
             </ul>
           </div>
         </div>
-        </div>
+      </div>
 
-            {/* Call to Action */}
-            <div className="text-center py-16 px-6 bg-purple-700 text-white" data-aos="fade-up">
-                <p className="text-xl text-gray-300 mb-6">
-                    Ready to curate a lineup your college will remember forever?
-                </p>
-                <a
-                    href="https://wa.me/+919980480343?text=Hello%2C%20I%20would%20like%20to%20talk%20to%20you%20regarding%20a%20college%20event!"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block bg-white text-purple-700 font-semibold py-3 px-6 rounded-lg hover:bg-gray-900"
-                >
-                    Contact Us on WhatsApp
-                </a>
-            </div>
-        </div>
-    )
+      {/* Call to Action */}
+      <div className="text-center py-16 px-6 bg-purple-700 text-white" data-aos="fade-up">
+        <p className="text-xl text-gray-300 mb-6">
+          Ready to curate a lineup your college will remember forever?
+        </p>
+        <a
+          href="https://wa.me/+919980480343?text=Hello%2C%20I%20would%20like%20to%20talk%20to%20you%20regarding%20a%20college%20event!"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block bg-white text-purple-700 font-semibold py-3 px-6 rounded-lg hover:bg-gray-900"
+        >
+          Contact Us on WhatsApp
+        </a>
+      </div>
+    </div>
+  )
 }
 
 export default CollegeEvents;

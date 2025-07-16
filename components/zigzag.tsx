@@ -5,6 +5,9 @@ import SpeedfestGp from '@/public/images/speedfestgp.png'
 import SipNPaint from '@/public/images/sip_n_paint.png'
 import Concerts from '@/public/images/concerts.png'
 import SlowDating from '@/public/images/slow_dating.png'
+import LuruBeats from '@/public/images/luru-beats-by-blrgrooveco.png'
+import MicDrop from '@/public/images/mic-drop-by-blrgrooveco.png'
+import KBlossom from '@/public/images/k-blossom-by-blrgrooveco.png'
 
 const ImagePlaceholder = ({ alt }: { alt: string }) => (
   <div className="w-full h-[405px] bg-purple-900 flex items-center justify-center text-white text-lg">
@@ -210,7 +213,7 @@ export default function Zigzag() {
 
             <div className="md:grid md:grid-cols-12 md:gap-6 items-center">
               <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-8 md:mb-0 md:order-1" data-aos="fade-up">
-                <ImagePlaceholder alt="Mic Drop" />
+                <Image className="max-w-full mx-auto md:max-w-none h-auto" src={MicDrop} width={540} height={405} alt="Features 03" unoptimized/>
               </div>
               <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6" data-aos="fade-right">
                 <div className="md:pr-4 lg:pr-12 xl:pr-16">
@@ -243,7 +246,7 @@ export default function Zigzag() {
             {/* 7th item – K Blossom */}
             <div className="md:grid md:grid-cols-12 md:gap-6 items-center">
               <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-8 md:mb-0 rtl" data-aos="fade-up">
-                <ImagePlaceholder alt="K Blossom" />
+                <Image className="max-w-full mx-auto md:max-w-none h-auto" src={KBlossom} width={540} height={405} alt="Features 03" unoptimized/>
               </div>
               <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6" data-aos="fade-left">
                 <div className="md:pl-4 lg:pl-12 xl:pl-16">
@@ -276,7 +279,7 @@ export default function Zigzag() {
             {/* 8th item – Luru Beats */}
             <div className="md:grid md:grid-cols-12 md:gap-6 items-center">
               <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-8 md:mb-0 md:order-1" data-aos="fade-up">
-                <ImagePlaceholder alt="Luru Beats" />
+                <Image className="max-w-full mx-auto md:max-w-none h-auto" src={LuruBeats} width={540} height={405} alt="Features 03" unoptimized/>
               </div>
               <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6" data-aos="fade-right">
                 <div className="md:pr-4 lg:pr-12 xl:pr-16">

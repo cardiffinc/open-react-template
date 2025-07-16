@@ -35,7 +35,7 @@ const features = [
 
 const WhyChooseUs = () => {
   return (
-    <section className="py-20 bg-gray-700" data-aos="fade-up">
+    <section className="py-20" data-aos="fade-up">
       <div className="max-w-6xl mx-auto px-4 text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-12">
           Why Partner with <span className="text-purple-600">BlrGrooveCo?</span>
@@ -44,12 +44,13 @@ const WhyChooseUs = () => {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-gray-50 p-6 rounded-2xl shadow hover:shadow-md transition"
-              data-aos="fade-up"
+              className="bg-gray-700 p-6 rounded-2xl shadow hover:shadow-md transition"
+              data-aos={index % 2 === 0 ? "flip-left" : "flip-right"}
+              data-aos-delay="200"
             >
               <div className="mb-4">{feature.icon}</div>
               <h3 className="text-lg font-semibold text-purple-600 mb-2">{feature.title}</h3>
-              <p className="text-sm text-gray-700">{feature.description}</p>
+              <p className="text-sm text-gray-200">{feature.description}</p>
             </div>
           ))}
         </div>

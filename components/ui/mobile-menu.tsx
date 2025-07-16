@@ -91,6 +91,14 @@ export default function MobileMenu() {
           </li>
           <li>
             <Link
+              href="/about"
+              className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center" onClick={() => setMobileNavOpen(false)}
+            >
+              About
+            </Link>
+          </li>
+          <li>
+            <Link
               href="https://www.instagram.com/blrgrooveco/"
               className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center" onClick={() => setMobileNavOpen(false)}
             >
